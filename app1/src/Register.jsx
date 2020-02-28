@@ -13,6 +13,13 @@ export default class Register extends Component {
     };
   }
 
+  handleChange = e => {
+    console.log(e.target.name);
+    console.log(e.target.value);
+    let user = this.state.user;
+    user[e.target.name] = e.target.value;
+    this.setState({ user });
+  };
   render() {
     return (
       <div>
@@ -28,6 +35,10 @@ export default class Register extends Component {
                     type="text"
                     className="form-control"
                     value={this.state.user.userName}
+                    name="userName"
+                    onChange={e => {
+                      this.handleChange(e);
+                    }}
                   />
                 </div>
                 <div className="form-group">
@@ -36,6 +47,10 @@ export default class Register extends Component {
                     type="email"
                     className="form-control"
                     value={this.state.user.email}
+                    name="email"
+                    onChange={e => {
+                      this.handleChange(e);
+                    }}
                   />
                 </div>
                 <div className="form-group">
@@ -44,6 +59,10 @@ export default class Register extends Component {
                     type="password"
                     className="form-control"
                     value={this.state.user.password}
+                    name="password"
+                    onChange={e => {
+                      this.handleChange(e);
+                    }}
                   />
                 </div>
 
