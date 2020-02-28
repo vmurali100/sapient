@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 // import Sapient2 from "./Sapient2";
-import Register from "./Register";
+// import Register from "./Register";
 import Crud from "./CRUD/Crud";
 
 function App() {

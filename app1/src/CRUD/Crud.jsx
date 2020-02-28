@@ -3,6 +3,17 @@ import Createuser from "./Createuser";
 import Userlist from "./Userlist";
 
 export default class Crud extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      users: []
+    };
+  }
+
+  getUsers = users => {
+    this.setState({ users });
+  };
   render() {
     return (
       <div>
@@ -11,10 +22,10 @@ export default class Crud extends Component {
 
           <div className="row">
             <div className="col-md-4">
-              <Createuser />
+              <Createuser getUsers={this.getUsers} />
             </div>
             <div className="col-md-8">
-              <Userlist />
+              <Userlist users={this.state.users} />
             </div>
           </div>
         </div>

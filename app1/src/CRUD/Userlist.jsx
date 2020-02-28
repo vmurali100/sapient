@@ -21,11 +21,11 @@ export default class Userlist extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.users.map(user => {
+            {this.props.users.map((user, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   {Object.values(user).map(val => {
-                    return <td>{val}</td>;
+                    return <td key={val}>{val}</td>;
                   })}
                 </tr>
               );

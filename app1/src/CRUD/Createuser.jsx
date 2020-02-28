@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Createuser extends Component {
   constructor(props) {
@@ -19,10 +20,8 @@ export default class Createuser extends Component {
   };
   handleSubmit = () => {
     let user = Object.assign({}, this.state.user);
-    let users = this.state.users;
-    users.push(user);
-    this.setState({ users }, () => {
-      console.log(this.state.users);
+    axios.post("http://localhost:3000/users", user).then(res => {
+      this.getAllUsers();
     });
     this.clearForm();
   };
@@ -32,10 +31,18 @@ export default class Createuser extends Component {
       email: "",
       password: ""
     };
-    this.setState({ user }, () => {
-      console.log(this.state.user);
+    this.setState({ user });
+  };
+
+  getAllUsers = () => {
+    axios.get("http://localhost:3000/users").then(res => {
+      console.log(res.data);
+      this.props.getUsers(res.data);
     });
   };
+  componentDidMount() {
+    this.getAllUsers();
+  }
   render() {
     return (
       <div>
