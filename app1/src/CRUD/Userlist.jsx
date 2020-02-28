@@ -7,6 +7,7 @@ export default class Userlist extends Component {
     this.state = {
       users: []
     };
+    console.log(this.props);
   }
 
   render() {
@@ -27,6 +28,26 @@ export default class Userlist extends Component {
                   {Object.values(user).map(val => {
                     return <td key={val}>{val}</td>;
                   })}
+                  <td>
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        this.props.editUser(user);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        this.props.deleteUser(user);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               );
             })}

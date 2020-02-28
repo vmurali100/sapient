@@ -1,28 +1,22 @@
 {
   "users": [
     {
-      "userName": "vmurali100",
+      "userName": "vmurali2233",
       "email": "vmurali100@gmail.com",
       "password": "123456",
       "id": 1
     },
     {
-      "userName": "vmurali11",
-      "email": "vmurali11@gmail.com",
-      "password": "eeee",
+      "userName": "112",
+      "email": "ada@gmail.com",
+      "password": "sam",
       "id": 2
     },
     {
-      "userName": "ram",
-      "email": "ram@gamil.com",
-      "password": "sam",
-      "id": 3
-    },
-    {
-      "userName": "vmurali100",
+      "userName": "vmurali1",
       "email": "vmurali100@gmail.com",
-      "password": "ram",
-      "id": 4
+      "password": "123",
+      "id": 3
     }
   ]
 }
