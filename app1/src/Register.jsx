@@ -49,8 +49,8 @@ export default class Register extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
-              <h2>User Register</h2>
+            <div className="col-md-4">
+              <h4>User Register</h4>
 
               <form>
                 <div className="form-group">
@@ -97,8 +97,29 @@ export default class Register extends Component {
                 >
                   Submit
                 </button>
-                <button onClick={this.getUser}>Get User</button>
               </form>
+            </div>
+            <div className="col-md-8">
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.users.map(user => {
+                    return (
+                      <tr>
+                        {Object.values(user).map(val => {
+                          return <td>{val}</td>;
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
