@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Sapient2 from "./Sapient2";
+// import Sapient2 from "./Sapient2";
 import Register from "./Register";
 
 function App() {

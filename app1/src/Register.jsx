@@ -21,7 +21,12 @@ export default class Register extends Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state.user);
+    let user = Object.assign({}, this.state.user);
+    let users = this.state.users;
+    users.push(user);
+    this.setState({ users }, () => {
+      console.log(this.state.users);
+    });
     this.clearForm();
   };
 
@@ -31,7 +36,13 @@ export default class Register extends Component {
       email: "",
       password: ""
     };
-    this.setState({ user });
+    this.setState({ user }, () => {
+      console.log(this.state.user);
+    });
+  };
+
+  getUser = () => {
+    console.log(this.state.user);
   };
   render() {
     return (
@@ -43,7 +54,7 @@ export default class Register extends Component {
 
               <form>
                 <div className="form-group">
-                  <label for="username">Username</label>
+                  <label htmlFor="username">Username</label>
                   <input
                     type="text"
                     className="form-control"
@@ -55,7 +66,7 @@ export default class Register extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     className="form-control"
@@ -67,7 +78,7 @@ export default class Register extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                     type="password"
                     className="form-control"
@@ -86,6 +97,7 @@ export default class Register extends Component {
                 >
                   Submit
                 </button>
+                <button onClick={this.getUser}>Get User</button>
               </form>
             </div>
           </div>
