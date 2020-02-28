@@ -15,8 +15,6 @@ export default class Register extends Component {
   }
 
   handleChange = e => {
-    console.log(e.target.name);
-    console.log(e.target.value);
     let user = this.state.user;
     user[e.target.name] = e.target.value;
     this.setState({ user });
@@ -24,6 +22,16 @@ export default class Register extends Component {
 
   handleSubmit = () => {
     console.log(this.state.user);
+    this.clearForm();
+  };
+
+  clearForm = () => {
+    let user = {
+      userName: "",
+      email: "",
+      password: ""
+    };
+    this.setState({ user });
   };
   render() {
     return (
