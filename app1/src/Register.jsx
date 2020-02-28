@@ -9,7 +9,8 @@ export default class Register extends Component {
         userName: "",
         email: "",
         password: ""
-      }
+      },
+      users: []
     };
   }
 
@@ -19,6 +20,10 @@ export default class Register extends Component {
     let user = this.state.user;
     user[e.target.name] = e.target.value;
     this.setState({ user });
+  };
+
+  handleSubmit = () => {
+    console.log(this.state.user);
   };
   render() {
     return (
@@ -66,7 +71,11 @@ export default class Register extends Component {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={this.handleSubmit}
+                >
                   Submit
                 </button>
               </form>
